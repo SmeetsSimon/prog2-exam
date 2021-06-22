@@ -26,7 +26,10 @@ def faculteit(n):
 
     De faculteit van 1 is 1.
     """
-    return 0
+    if n == 1:
+        return 1
+    else:
+        return  (n * faculteit(n - 1))
 
 
 def rijksregisternummer_controlegetal(rrn):
@@ -35,7 +38,9 @@ def rijksregisternummer_controlegetal(rrn):
     Het controlegetal is het getal gevormd door de laatste twee cijfers
     van het rijksregisternummer.
     """
-    return 0
+    controlegetal = rrn
+    x = controlegetal [-2:]
+    return int(x)
 
 
 def rijksregisternummer_geboortejaar(rrn):
@@ -49,7 +54,9 @@ def rijksregisternummer_geboortejaar(rrn):
 
     In bovenstaand voorbeeld is het geboortejaar 42 (1942).
     """
-    return 0
+    geboortejaar = rrn
+    x = geboortejaar [:2]
+    return int(x)
 
 
 def rijksregisternummer_geboortemaand(rrn):
@@ -62,7 +69,9 @@ def rijksregisternummer_geboortemaand(rrn):
 
     In bovenstaand voorbeeld is het geboortemaand 1 (januari).
     """
-    return 0
+    geboortemaand = rrn
+    x = geboortemaand [3:5]
+    return int(x)
 
 
 def rijksregisternummer_geboortedag(rrn):
@@ -75,7 +84,9 @@ def rijksregisternummer_geboortedag(rrn):
 
     In bovenstaand voorbeeld is het geboortedag 22.
     """
-    return 0
+    geboortedag = rrn
+    x = geboortedag [6:8]
+    return int(x)
 
 
 def rijksregisternummer_is_vrouw(rrn):
@@ -91,7 +102,15 @@ def rijksregisternummer_is_vrouw(rrn):
 
     In bovenstaand voorbeeld is de persoon dus een man.
     """
-    return 0
+    getal = rrn
+    x = getal [11]
+
+    if int(x) % 2 == 0:
+        return True
+    else:
+        return False
+
+
 
 
 def rijksregisternummer_hoofdgetal(rrn):
@@ -105,7 +124,14 @@ def rijksregisternummer_hoofdgetal(rrn):
 
     In bovenstaand voorbeeld is het hoofdgetal dus 420122051.
     """
-    return 0
+    getal = rrn
+    a = getal [0:2]
+    b = getal [3:5]
+    c = getal [6:8]
+    d = getal [9:12]
+
+
+    return int(a+b+c+d)
 
 
 def is_geldig_rijksregisternummer(rrn):
@@ -138,8 +164,8 @@ def volume_kegel(r, h):
     wordt berekend door:
     V = 1/3 * π * r^2 * h
     """
-
-    return 0
+    resultaat = 1/3 * 3.14 * r*r * h
+    return resultaat
 
 
 def benader_pi(n):
